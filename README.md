@@ -67,6 +67,20 @@ Po zakończeniu treningu skrypt zapisuje:
 
 ---
 
+## Wykresy wyników
+
+### IMDB
+![IMDB results](imdb_results.png)
+
+Najlepsza konfiguracja: architektura `[256]`, `relu` / `leakyrelu`, lr=`0.0001`, **accuracy ≈ 0.8952** (TF-IDF, bez augmentacji). Augmentacja nieznacznie obniżała wyniki – mały zbiór 100 próbek nie wniósł istotnej informacji przy 25 000 próbkach treningowych. Learning rate `0.0001` dominuje w top-10; `0.01` daje gorsze rezultaty.
+
+### 20 Newsgroups
+![20 Newsgroups results](newsgroups_results.png)
+
+Najlepsza konfiguracja: architektura `[256]`, `relu`, lr=`0.001`, **accuracy ≈ 0.9138** (TF-IDF, bez augmentacji). Heatmapa pokazuje silną zależność od learning rate – `lr=0.0001` drastycznie obniża dokładność (zakres 0.47–0.49). Augmentacja przyniosła marginalną poprawę w kilku konfiguracjach.
+
+---
+
 ## Instalacja zależności
 
 ```bash
